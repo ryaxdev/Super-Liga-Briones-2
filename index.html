@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Super Liga Briones 2</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <!-- component -->
+<style>
+html,body{height:100%;-webkit-font-smoothing:antialiased;scrollbar-width:none;-ms-overflow-style:none}body::-webkit-scrollbar{display:none}::-moz-selection{color:white;background:#10b981}::selection{color:white;background:#10b981}
+</style>
+
+<body class="bg-gray-50">
+  <nav id="header" class="fixed w-full z-10 top-0">
+    <div id="progress" class="h-1 z-20 top-0" style="
+            background: linear-gradient(
+              to right,
+              #10b981 var(--scroll),
+              transparent 0
+            );
+          ">
+    </div>
+    <div id="nav-content" class="w-full text-gray-700 bg-gray-50 md:bg-transparent">
+      <div x-data="{ open: false }"
+        class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        <div class="p-4 flex flex-row items-center justify-between">
+          <a href="/"
+            class="text-2xl md:text-3xl font-bold tracking-normal text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">Super Liga Briones <span
+              style="color: #FF7F50;">2</span></a>
+          <button class="md:hidden rounded-lg focus:outline-none focus:shadow-none" @click="open = !open">
+            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+              <path x-show="!open" fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+              <path x-show="open" fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <div :class="{'flex': open, 'hidden': !open}"
+          class="font-sans flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+          <a class="px-4 py-2 mt-2 text-black md:mt-0 md:ml-4 hover:underline" href="/category?q=business">News</a>
+          <a class="px-4 py-2 mt-2 text-black md:mt-0 md:ml-4 hover:underline"
+            href="/category?q=technology">Top Jugadores</a>
+          <a class="px-4 py-2 mt-2 text-black md:mt-0 md:ml-4 hover:underline"
+            href="./table.html">Tabla</a>
+          <div class="relative text-gray-600 bg-white flex items-center rounded-full">
+            <form action="/search" method="get">
+              <input name="q" id="search" type="text" placeholder="Search..." placeholder="Search"
+                class="bg-white h-10 px-4 md:px-6 lg:px-8 rounded-full text-sm placeholder-green-600 focus:outline-none">
+              <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                <svg class="h-4 w-4 fill-current text-green-600" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                  viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+                  width="512px" height="512px">
+                  <path
+                    d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+
+  <h1 class="font-sans font-bold text-2xl md:text-3xl leading-none mt-24 mb-4 text-center text-gray-700">
+    <span class="text-green-500">Noticias Recientes</span>
+  </h1>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/ligabriones2">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://scontent.ftam2-1.fna.fbcdn.net/v/t39.30808-6/284614196_1932495190473764_513527680072836347_n.jpg?stp=dst-jpg_p843x403&_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeHXwYRPGAnYv2Ez949FB-FoIzQ_XkId64wjND9eQh3rjIXSBszsSfl44F2NQzeKdbU2909gwxi3M_byNo-DtDu8&_nc_ohc=RsyDxOztRSwAX-lVtm8&_nc_oc=AQn3idhRf130HdMX2Np9pPaFLl8cA01WBiZcLcql_cuJOPxe4cA0E9ngWnX9NRW7ijkOxThaPBrJbxUtgFCvvV5X&_nc_ht=scontent.ftam2-1.fna&oh=00_AT8bk8aMmBW_2j7G6-8tiPpDseJ7briPDFNgN9aXg6BgzA&oe=629A31C1" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Ya todos LISTO!!</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">PARÁ EL TORNEO DE VETERANOS😎⚽🏆 SERNA LOS DÍAS SÁBADOS Y DOMINGOS</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://timesofindia.indiatimes.com/india/international-space-station-to-retire-in-2030-will-fall-into-pacific-ocean-a-year-later-nasa/articleshow/89392862.cms">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">super liga briones 2</p>
+                
+
+                
+                <p class="text-gray-700">Mayo 30, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/ligabriones2/photos/a.529644537425510/1932495203807096/"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Leer Mas
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Horarios nocturno</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">
+            M 8 loya vs psg<br/>
+            M 9 monte a. Vs panteras<br/>
+            J  9 pariente vs bosque<br/>
+            J10 anel vs tigrev<br/>
+            V  8 William vs yulme<br/>
+            V  9 Ramiro vs renacidos<br/>
+            V10 dela cruz vs inquebrantable<br/>
+            D  tijuana</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.wionews.com/science/astronomer-clicks-photo-of-potentially-hazardous-asteroid-coming-towards-earth-451098">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">super liga briones 2</p>
+                
+
+                
+                <p class="text-gray-700">Mayo 25, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.wionews.com/science/astronomer-clicks-photo-of-potentially-hazardous-asteroid-coming-towards-earth-451098"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.moneycontrol.com/news/business/markets/trade-setup-for-monday-top-15-things-to-know-before-opening-bell-170-8042701.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.moneycontrol.com/static-mcnews/2021/07/stocks_sensex_nifty_stockmarket1-1-770x433.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Trade setup for Monday: Top 15 things to know before Opening Bell - Moneycontrol.com</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Trade Setup | According to pivot charts, the key support levels for the Nifty are placed at 17,446.66, followed by 17,377.03. If the index moves up, the key resistance levels to watch out for are 17,601.87 and 17,687.43.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.moneycontrol.com/news/business/markets/trade-setup-for-monday-top-15-things-to-know-before-opening-bell-170-8042701.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Moneycontrol</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.moneycontrol.com/news/business/markets/trade-setup-for-monday-top-15-things-to-know-before-opening-bell-170-8042701.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.businessinsider.in/tech/news/spacex-has-so-many-starlink-satellites-theyre-increasingly-photobombing-astronomers-images-a-study-says/articleshow/89389799.cms">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://www.businessinsider.in/photo/89389799/spacex-has-so-many-starlink-satellites-theyre-increasingly-photobombing-astronomers-images-a-study-says.jpg?imgsize=162344" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">SpaceX has so many Starlink satellites they&#39;re increasingly photobombing astronomers&#39; images, a study says - Business Insider India</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">SpaceX&#39;s satellites are increasingly photobombing astronomical images, a study has found. It identified a 35-fold increase in the twilight images corrupted</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.businessinsider.in/tech/news/spacex-has-so-many-starlink-satellites-theyre-increasingly-photobombing-astronomers-images-a-study-says/articleshow/89389799.cms">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Business Insider India</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.businessinsider.in/tech/news/spacex-has-so-many-starlink-satellites-theyre-increasingly-photobombing-astronomers-images-a-study-says/articleshow/89389799.cms"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.hindustantimes.com/india-news/covid19-centre-to-resume-full-office-attendance-without-any-exemption-from-feb-7-101644161758671.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.hindustantimes.com/img/2022/02/06/1600x900/211b953a-6c53-11ec-90fd-dc4af0b7c0b9_1641196168085_1644161865598.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Covid-19: Centre to resume full office attendance ‘without any exemption’ from Feb 7 - Hindustan Times</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">The Union ministry of personnel, public grievances &amp; pensions said that Union minister Jitendra Singh held a review meeting on Sunday following which the decision to resume 100% attendance for its employees was taken. | Latest News India</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.hindustantimes.com/india-news/covid19-centre-to-resume-full-office-attendance-without-any-exemption-from-feb-7-101644161758671.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Hindustan Times</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.hindustantimes.com/india-news/covid19-centre-to-resume-full-office-attendance-without-any-exemption-from-feb-7-101644161758671.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.hindustantimes.com/india-news/making-a-difference-in-the-lives-of-cancer-patients-101644160838620.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.hindustantimes.com/img/2022/02/06/1600x900/42c3d832-8760-11ec-900e-268a37a5acfe_1644160837475.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Making a difference in the lives of cancer patients - Hindustan Times</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Cancer is devastating for many. With World Cancer Day just gone by, we bring you beacons of hope that are trying to make a difference in the lives of cancer patients. | Latest News India</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.hindustantimes.com/india-news/making-a-difference-in-the-lives-of-cancer-patients-101644160838620.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Hindustan Times</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.hindustantimes.com/india-news/making-a-difference-in-the-lives-of-cancer-patients-101644160838620.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/news/india/sputnik-light-dcgi-nod-to-emergency-use-of-single-dose-covid-vaccine-11644160096963.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.livemint.com/img/2022/02/06/600x338/c11e5734-56aa-11ec-8b80-57aca72afec1_1644160322502_1644160330005.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Sputnik Light: DCGI nod to emergency use of single-dose Covid vaccine - Mint</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Sputnik Light is the 9th COVID-19 vaccine in the country, says Dr Mansukh Mandaviya</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/news/india/sputnik-light-dcgi-nod-to-emergency-use-of-single-dose-covid-vaccine-11644160096963.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Livemint</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/news/india/sputnik-light-dcgi-nod-to-emergency-use-of-single-dose-covid-vaccine-11644160096963.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://sports.ndtv.com/india-vs-west-indies-2022/rohit-sharma-yuzvendra-chahal-make-indias-1000th-odi-memorable-help-beat-west-indies-by-six-wickets-2752777">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://c.ndtvimg.com/2022-02/qg28ovbo_india-odi-afp_625x300_06_February_22.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=675" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Rohit Sharma, Yuzvendra Chahal Make India&#39;s 1000th ODI Memorable, Help Beat West Indies By Six Wicke.. - NDTV Sports</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">India vs West Indies 1st ODI: India beat West Indies by six wickets in the first ODI at the Narendra Modi Stadium in Ahmedabad to take a 1-0 lead in the three-match series.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://sports.ndtv.com/india-vs-west-indies-2022/rohit-sharma-yuzvendra-chahal-make-indias-1000th-odi-memorable-help-beat-west-indies-by-six-wickets-2752777">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">NDTV News</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://sports.ndtv.com/india-vs-west-indies-2022/rohit-sharma-yuzvendra-chahal-make-indias-1000th-odi-memorable-help-beat-west-indies-by-six-wickets-2752777"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.bollywoodlife.com/news-gossip/bollywood-news-lata-mangeshkar-death-when-lata-mangeshkar-was-being-poisoned-slowly-and-felt-someone-planted-it-2003942/">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://st1.bollywoodlife.com/wp-content/uploads/2022/02/Lata-Mangeshkar1-1-600x315.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">When Lata Mangeshkar was being poisoned slowly and felt someone ‘planted’ it - Bollywood Life</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Lata Mangeshkar passed away this morning at the age of 92. She had been unwell due to Covid-related complications.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.bollywoodlife.com/news-gossip/bollywood-news-lata-mangeshkar-death-when-lata-mangeshkar-was-being-poisoned-slowly-and-felt-someone-planted-it-2003942/">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Bollywood Life</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.bollywoodlife.com/news-gossip/bollywood-news-lata-mangeshkar-death-when-lata-mangeshkar-was-being-poisoned-slowly-and-felt-someone-planted-it-2003942/"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.cricbuzz.com/cricket-news/120961/he-can-be-our-future-no-3-msk-prasad-on-shaik-rasheed">
+        <div class="md:flex-shrink-0">
+
+          <img src="http://www.cricbuzz.com/a/img/v1/600x400/i1/c225966/shaik-rasheed-hit-a-fifty-in-t.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">&#39;He can be our future No. 3&#39; - MSK Prasad on Shaik Rasheed | Cricbuzz.com - Cricbuzz - Cricbuzz</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Rasheed played a crucial role in the knockout phase of the U19 World Cup to help India clinch the title</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.cricbuzz.com/cricket-news/120961/he-can-be-our-future-no-3-msk-prasad-on-shaik-rasheed">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Cricbuzz</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.cricbuzz.com/cricket-news/120961/he-can-be-our-future-no-3-msk-prasad-on-shaik-rasheed"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.indiatoday.in/india/story/pm-modi-lata-mangeshkar-death-last-rites-mumbai-1909527-2022-02-06">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202202/modi_lata_mangeshkar_shivaji_p-647x363.jpeg?KaZZVuJux3G7LpouzcCUOsRkCKdY4CNY" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">PM Modi pays tribute to Lata Mangeshkar at Mumbai&#39;s Shivaji Park - India Today</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Prime Minister Narendra Modi reached Mumbai on Sunday evening to pay his last respects to legendary singer Lata Mangeshkar, who passed away in the morning.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.indiatoday.in/india/story/pm-modi-lata-mangeshkar-death-last-rites-mumbai-1909527-2022-02-06">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">India Today</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.indiatoday.in/india/story/pm-modi-lata-mangeshkar-death-last-rites-mumbai-1909527-2022-02-06"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://indianexpress.com/article/cities/delhi/jnu-allows-offline-classes-monday-7759622/">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.indianexpress.com/2022/02/jnu-1200.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Offline classes to resume at JNU from Monday, DU stays online - The Indian Express</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">This comes after the District Disaster Management Authority (DDMA) on Friday allowed higher education institutes to resume physical teaching and learning activities amid declining cases of Covid-19 in Delhi.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://indianexpress.com/article/cities/delhi/jnu-allows-offline-classes-monday-7759622/">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">The Indian Express</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://indianexpress.com/article/cities/delhi/jnu-allows-offline-classes-monday-7759622/"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.timesnownews.com/technology-science/article/life-supporting-moons-can-only-form-around-small-planets-study/856399">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://imgk.timesnownews.com/story/moon.jpg?tr=w-560,h-292,fo-top" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Life-supporting Moons can only form around small planets: Study - Times Now</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">While Earth&#39;s moon is large for the planet&#39;s size, a new study has now found that our planet was just the right size to form such a large, life-enabling moon.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.timesnownews.com/technology-science/article/life-supporting-moons-can-only-form-around-small-planets-study/856399">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Zoom</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.timesnownews.com/technology-science/article/life-supporting-moons-can-only-form-around-small-planets-study/856399"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Matchday LIVE: Barcelona face Atletico Madrid after Liverpool down Cardiff in FA Cup, Senegal to face Egypt in Afcon final - Goal India</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Get the latest soccer news, rumors, video highlights, scores, schedules, standings, photos, player information and more from Sporting News Canada</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.sportingnews.com/ca/soccer?utm_campaign=Canada&amp;amp;utm_medium=Redirect&amp;amp;utm_source=Goal">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Sporting News</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.sportingnews.com/ca/soccer?utm_campaign=Canada&amp;amp;utm_medium=Redirect&amp;amp;utm_source=Goal"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.moneycontrol.com/news/business/economy/rbi-likely-to-maintain-status-quo-in-policy-rate-next-week-say-experts-8046511.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.moneycontrol.com/static-mcnews/2021/08/RBI-770x433.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">RBI likely to maintain status quo in policy rate next week, say experts - Moneycontrol</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Experts, however, are of the opinion that RBI&#39;s monetary policy committee (MPC) may change the policy stance from &#39;accommodative&#39; to &#39;neutral&#39; and tinker with the reverse-repo rate as part of the liquidity normalisation process.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.moneycontrol.com/news/business/economy/rbi-likely-to-maintain-status-quo-in-policy-rate-next-week-say-experts-8046511.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Moneycontrol</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.moneycontrol.com/news/business/economy/rbi-likely-to-maintain-status-quo-in-policy-rate-next-week-say-experts-8046511.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/technology/garena-free-fire-redeem-codes-for-february-6-are-here-11644145191964.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.livemint.com/img/2022/02/06/600x338/FKuXRr2aAAU3mx5_1644145306918_1644145319502.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Garena Free Fire redeem codes for February 6 are here - Mint</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Players can get special skin, weapons and other in-game collectables</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/technology/garena-free-fire-redeem-codes-for-february-6-are-here-11644145191964.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Livemint</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/technology/garena-free-fire-redeem-codes-for-february-6-are-here-11644145191964.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.hindustantimes.com/entertainment/tv/karishma-tanna-dances-to-samantha-ruth-prabhu-s-oo-antava-at-her-reception-in-mumbai-watch-101644141187352.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.hindustantimes.com/img/2022/02/06/1600x900/Karishma-Tanna_1644141591142_1644141607331.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Karishma Tanna dances to Samantha Ruth Prabhu&#39;s Oo Antava at her reception in Mumbai. Watch - Hindustan Times</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Karishma Tanna, grooved to Samantha Ruth Prabhu&#39;s Oo Antava at her reception. She married Varun Bangera on Saturday. Watch video here.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.hindustantimes.com/entertainment/tv/karishma-tanna-dances-to-samantha-ruth-prabhu-s-oo-antava-at-her-reception-in-mumbai-watch-101644141187352.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Hindustan Times</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.hindustantimes.com/entertainment/tv/karishma-tanna-dances-to-samantha-ruth-prabhu-s-oo-antava-at-her-reception-in-mumbai-watch-101644141187352.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://indianexpress.com/article/sports/cricket/in-raj-bawa-india-could-have-finally-discovered-a-white-ball-pace-all-rounder-7758840/">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.indianexpress.com/2022/02/raj-angad-bawa.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">In Raj Bawa, India could have finally discovered a white-ball pace all-rounder - The Indian Express</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">It was the bouncer to Bell that tilted the balance of the World Cup final in India U-19’s favour, psychologically.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://indianexpress.com/article/sports/cricket/in-raj-bawa-india-could-have-finally-discovered-a-white-ball-pace-all-rounder-7758840/">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">The Indian Express</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://indianexpress.com/article/sports/cricket/in-raj-bawa-india-could-have-finally-discovered-a-white-ball-pace-all-rounder-7758840/"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.republicworld.com/technology-news/e-commerce/apple-iphone-11-64gb-price-check-out-best-deals-from-leading-retailers-articleshow.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/pdiihksxyurnfp1z_1644132626.jpeg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Apple iPhone 11 (64GB) price: Check out best deals from leading retailers - Republic World</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Apple iPhone 11 is a capable smartphone and is currently available at a discounted price across several retailers in the country. Check out the best deals here.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.republicworld.com/technology-news/e-commerce/apple-iphone-11-64gb-price-check-out-best-deals-from-leading-retailers-articleshow.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Republic World</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.republicworld.com/technology-news/e-commerce/apple-iphone-11-64gb-price-check-out-best-deals-from-leading-retailers-articleshow.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://economictimes.indiatimes.com/news/economy/policy/indias-digital-currency-to-debut-by-early-2023/articleshow/89379626.cms">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://img.etimg.com/thumb/msid-89379653,width-1070,height-580,imgsize-81336,overlay-economictimes/photo.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">India&#39;s digital currency to debut by early 2023 - Economic Times</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">A top government source said the digital currency issued by the RBI would be numbered in units, just like every fiat currency has an unique number.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://economictimes.indiatimes.com/news/economy/policy/indias-digital-currency-to-debut-by-early-2023/articleshow/89379626.cms">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">The Times of India</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://economictimes.indiatimes.com/news/economy/policy/indias-digital-currency-to-debut-by-early-2023/articleshow/89379626.cms"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.ndtv.com/world-news/morocco-boy-found-dead-at-bottom-of-well-in-tragic-end-to-5-day-search-2751692">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://c.ndtvimg.com/2022-02/ofmbl3mo_morocco-rescuers-save-boy-650_625x300_04_February_22.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Morocco Boy Found Dead At Bottom Of Well In Tragic End To 5-Day Search - NDTV</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">Moroccan emergency crews found a five-year-old boy dead at the bottom of a well late Saturday in a tragic end to a painstaking five-day rescue operation that gripped the nation and beyond.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.ndtv.com/world-news/morocco-boy-found-dead-at-bottom-of-well-in-tragic-end-to-5-day-search-2751692">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">NDTV News</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.ndtv.com/world-news/morocco-boy-found-dead-at-bottom-of-well-in-tragic-end-to-5-day-search-2751692"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/market/stock-market-news/sbi-shares-at-52-week-high-experts-predict-more-rise-after-strong-q3-results-11644052724387.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.livemint.com/img/2022/02/05/600x338/SBIFD_1579255374805_1644053508620.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">SBI shares at 52-week high. Experts predict more rise after strong Q3 results - Mint</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">SBI share price may continue to surge as Stata Bank of India has reported strong Q3 earnings as its year-on-year (YoY) net profit has shot up around 62 per cent, believe stock market experts</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/market/stock-market-news/sbi-shares-at-52-week-high-experts-predict-more-rise-after-strong-q3-results-11644052724387.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Livemint</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/market/stock-market-news/sbi-shares-at-52-week-high-experts-predict-more-rise-after-strong-q3-results-11644052724387.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/news/india/india-reports-1-07-474-fresh-covid-19-cases-865-deaths-in-last-24-hours-11644116667683.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://images.livemint.com/img/2022/02/06/600x338/Omicron-Mumbai-Covid_1640830707962_1644120872473.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">India reports 1,07,474 fresh Covid-19 cases, 865 deaths in last 24 hours - Mint</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">India reported single day rise of 1,07,474 Covid-19 infections, 865 fatalities in the last 24 hours, pushing the country&#39;s tally of Covid cases to 4,21,88,138 and the death toll to 5,01,979</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/news/india/india-reports-1-07-474-fresh-covid-19-cases-865-deaths-in-last-24-hours-11644116667683.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Livemint</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.livemint.com/news/india/india-reports-1-07-474-fresh-covid-19-cases-865-deaths-in-last-24-hours-11644116667683.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.indiatoday.in/world/story/osama-bin-laden-son-taliban-terror-groups-freedom-afghanistan-un-report-1909311-2022-02-06">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202202/Taliban_fighters__AP__3_1200x7-647x363.jpeg?wCZVyNLNsj55QGWvKBX4ppknlP03xZNb" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">Osama bin Laden’s son met Taliban in Oct, terror groups enjoy great freedom in Afghanistan: UN report - India Today</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">According to a new report by the United Nations Security Council, Osama bin Laden&#39;s son met the Taliban in Afghanistan in October 2021. The report adds that terrorist groups enjoy greater freedom in Afghanistan today than in any other period in recent history.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.indiatoday.in/world/story/osama-bin-laden-son-taliban-terror-groups-freedom-afghanistan-un-report-1909311-2022-02-06">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">India Today</p>
+                
+
+                
+                <p class="text-gray-700">February 6, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.indiatoday.in/world/story/osama-bin-laden-son-taliban-terror-groups-freedom-afghanistan-un-report-1909311-2022-02-06"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.republicworld.com/entertainment-news/whats-viral/uk-after-covid-recovery-woman-develops-ability-to-smell-for-1st-time-since-childhood-articleshow.html">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://img.republicworld.com/republic-prod/stories/promolarge/xhdpi/qclzigbjngkxmnow_1644053497.jpeg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">UK: After COVID recovery, woman develops ability to smell for 1st time since childhood - Republic World</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">A COVID-19 patient after recovering from the virus has been able to smell for the first time since childhood. She is now able to smell perfumes, candles, herbs.</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.republicworld.com/entertainment-news/whats-viral/uk-after-covid-recovery-woman-develops-ability-to-smell-for-1st-time-since-childhood-articleshow.html">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Republic World</p>
+                
+
+                
+                <p class="text-gray-700">February 5, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.republicworld.com/entertainment-news/whats-viral/uk-after-covid-recovery-woman-develops-ability-to-smell-for-1st-time-since-childhood-articleshow.html"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="mx-auto px-4 py-4 max-w-xl my-auto">
+    <div class="bg-gray-50 md:bg-white md:shadow-xl rounded-lg mb-6 ">
+      
+      <a target="_blank" rel="noreferrer noopener" href="https://www.covaipost.com/coimbatore/oppo-launches-reno7-series-redefines-smartphone-videography-with-continuous-breakthroughs-in-sensors-camera-algorithms-in-an-ultra-slim-design/">
+        <div class="md:flex-shrink-0">
+
+          <img src="https://www.covaipost.com/wp-content/uploads/2022/02/image013-150x150.jpg" alt="uploaded cover image"
+            class="object-cover h-full w-full rounded-lg rounded-b-none">
+
+        </div>
+      </a>
+      
+      <div class="py-1">
+        <div class="p-4">
+          <h2 class="truncate font-bold mb-2 md:mt-4 text-2xl text-gray-800 tracking-normal">OPPO Launches Reno7 Series redefines smartphone videography with continuous breakthroughs in sensors, camera algorithms, in an ultra-slim design | Covaipost - Covai Post Network</h2>
+          
+          <p class="break-words text-sm text-gray-700 px-2 mr-1">No description provided</p>
+          
+        </div>
+
+        <div class="flex items-center justify-between p-2 md:p-4 md:mx-4">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.covaipost.com/coimbatore/oppo-launches-reno7-series-redefines-smartphone-videography-with-continuous-breakthroughs-in-sensors-camera-algorithms-in-an-ultra-slim-design/">
+            <div class="flex items-center">
+              <div class="text-sm ml-2">
+                
+                <p class="text-black leading-none">Covaipost.com</p>
+                
+
+                
+                <p class="text-gray-700">February 5, 2022</p>
+                
+              </div>
+            </div>
+          </a>
+          <a target="_blank" rel="noreferrer noopener" href="https://www.covaipost.com/coimbatore/oppo-launches-reno7-series-redefines-smartphone-videography-with-continuous-breakthroughs-in-sensors-camera-algorithms-in-an-ultra-slim-design/"
+            class="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <footer class="font-sans relative pt-5 pb-3 md:pb-6">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="flex w-full md:w-1/2">
+          <div class="text-2xl px-8">
+            <h3 class="font-bold text-gray-900">Super Liga Briones <span style="color: #FF7F50;">2</span></h3>
+            <p class="py-4 text-gray-700 text-sm">
+              Pagina Creada por ryaxdev Aqui abajo mis redes sociales.
+            </p>
+            <div class="my-3">
+
+              <a href="https://github.com/ryaxdev" class="h-8 w-8 rounded-full outline-none focus:outline-none"
+                type="button">
+                <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-600" width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+
+              <a class="h-8 w-8 rounded-full outline-none focus:outline-none"
+                href="https://www.linkedin.com/in/leonardo-adrian-cervantes-escudero-41a561224/" type="button">
+                <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-600" width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                </svg>
+              </a>
+
+              <a class=" h-8 w-8 rounded-full outline-none focus:outline-none"
+                href="https://chat.whatsapp.com/IcpsvyWY6M4EtFZsrO7sWY" type="button">
+                <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-600" width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+              </a>
+
+              <a class=" h-8 w-8 rounded-full outline-none focus:outline-none"
+                href="mailto:adrianescudero25092008@gmail.com?subject=Hello" type="button">
+                <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-600" width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" />
+                </svg>
+              </a>
+
+              <a class=" h-8 w-8 rounded-full outline-none focus:outline-none" href="https://twitter.com/ryaxfn"
+                type="button">
+                <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-600" width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                </svg>
+              </a>
+
+              <a class=" h-8 w-8 rounded-full outline-none focus:outline-none"
+                href="https://www.instagram.com/ryaxdev/" type="button">
+                <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-600" width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+
+              <a class=" h-8 w-8 rounded-full outline-none focus:outline-none"
+                href="https://www.reddit.com/user/Afraid_Attorney871" type="button">
+                <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-600" width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full lg:w-6/12 px-4">
+          <div class="flex flex-wrap items-top">
+            <div class="w-full lg:w-4/12  px-4 ml-auto">
+              <h3 class="font-bold text-sm text-gray-900 mb-2">XD</h3>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 pb-2 text-sm" href="#">XD</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 pb-2 text-sm" href="#">XD</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 pb-2 text-sm" href="#">XD</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 pb-2 text-sm" href="#">XD</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="w-full lg:w-4/12 px-4">
+              <h3 class="font-bold text-sm text-gray-900 mb-2">:v</h3>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 pb-2 text-sm" href="#">
+                    :v
+                  </a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 pb-2 text-sm" href="#">
+                    :v
+                  </a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 pb-2 text-sm" href="#">
+                    :v
+                  </a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 pb-2 text-sm" href="#">
+                    :v
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="my-3 md:my-6 border-gray-400" />
+      <div class="flex flex-wrap items-center md:justify-between justify-center">
+        <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+          <div class="text-sm text-gray-600 py-1">
+            Copyright © 2022 by
+            <a href="https://github.com/ryaxdev" class="text-gray-600 hover:text-gray-900">Leonardo Adrian Cervantes Escudero</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script type="text/javascript">
+let h=document.documentElement,b=document.body,st="scrollTop",sh="scrollHeight",progress=document.querySelector("#progress"),scroll;let scrollpos=window.scrollY;let header=document.getElementById("header");let navcontent=document.getElementById("nav-content");document.addEventListener("scroll",function(){scroll=(h[st]||b[st])/((h[sh]||b[sh])-h.clientHeight)*100;progress.style.setProperty("--scroll",scroll+"%");scrollpos=window.scrollY;if(scrollpos>10){header.classList.add("bg-white");header.classList.add("shadow-xl");navcontent.classList.remove("bg-gray-50");navcontent.classList.add("bg-white")}else{header.classList.remove("bg-white");header.classList.remove("shadow-xl");navcontent.classList.remove("bg-white");navcontent.classList.add("bg-gray-50")}});
+</script>
+ <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>   
+</body>
+
+</html>
